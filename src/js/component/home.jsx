@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import TrafficLightTime from "./trafficlighttime";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
+
+	const [showTrafficLight, setShowTrafficLight] = useState(false); 
+
+	function buttonClicked() { // muestra el componente deseado una vez pulsado el boton
+		setShowTrafficLight(true)
+	}
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<>
+		{showTrafficLight ? (<TrafficLightTime />) : (
+		<div className="first-div d-flex justify-content-center">
+			<button class="button" onClick={buttonClicked}>
+				<div class="lid">
+					<span class="side top"></span>
+					<span class="side front"></span>
+					<span class="side back"> </span>
+					<span class="side left"></span>
+					<span class="side right"></span>
+				</div>
+				<div class="panels">
+					<div class="panel-1">
+					<div class="panel-2">
+						<div class="btn-trigger">
+						<span class="btn-trigger-1"></span>
+						<span class="btn-trigger-2"></span>
+						</div>
+					</div>
+					</div>
+				</div>
+			</button>
 		</div>
+		)}
+
+		</>
 	);
 };
 

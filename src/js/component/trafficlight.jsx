@@ -35,7 +35,7 @@ const TrafficLight = () => {
 
     return(
         <div className="d-flex justify-content-center">
-            <div className="palo"></div>
+            <div className="support"></div>
             <div className="card d-flex align-items-center flex-column">
                     <button onClick={switchRed} className={`mb-3 red ${redLight == "off" ? "off" : "lit"}`}></button>
                     <button onClick={switchAmber} className={`mb-3 amber ${amberLight == "off" ? "off" : "lit"}`}></button>
