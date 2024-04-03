@@ -45,7 +45,11 @@ module.exports = {
             options: { name: '[name].[ext]' } 
           }
         }, //for images
-        { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts
+        { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] }, //for fonts
+        {
+          test: /\.mp3$/,
+          loader: 'file-loader',
+      } //for .mp3 files
     ]
   },
   resolve: {

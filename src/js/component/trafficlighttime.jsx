@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive'
 
 import trafficImg from "../../img/traffic2.jpg"
+import trafficNoise from "../../audio/traffic-noise.mp3"
 
 const TrafficLightTime = () => {
     const [redLight, setRedLight] = useState("off")
@@ -60,6 +61,7 @@ const TrafficLightTime = () => {
                     </div>
                 </>
             )}
+            <audio src={trafficNoise} autoPlay></audio>
         </div>
     )
 }
